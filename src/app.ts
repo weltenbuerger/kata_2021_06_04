@@ -1,13 +1,13 @@
-// import express,{Application, Request, Response, NextFunction} from 'express'
-
-// const app: Application = express()
-
-// const add = (a: number, b:number):number => a + b
-
-// app.get('/',(req: Request, res: Response, next: NextFunction) => {
-//     console.log(add(5,6))
-//     res.send('hello')
-// })
-
-// app.listen(5000,() => console.log('Server running'))
+const digitalRoot = (n: number): number => {
+    const reduced: number = n
+      .toString()
+      .split('')
+      .reduce((acc: number, cur: string) => (acc += parseInt(cur)), 0);
+    return reduced >= 10 ? digitalRoot(reduced) : reduced;
+  };
+  
+  digitalRoot(456);
+  
+  // assert.equal(solution.digitalRoot(16), 7);
+  // assert.equal(solution.digitalRoot(456), 6 );
 
