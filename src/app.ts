@@ -11,3 +11,13 @@ const digitalRoot = (n: number): number => {
   // assert.equal(solution.digitalRoot(16), 7);
   // assert.equal(solution.digitalRoot(456), 6 );
 
+// alternative
+ const digitalRoot2 = (n:number):number => {
+    while (n >= 10) {
+      n = n.toString()
+        .split('')
+        .map(x => parseInt(x))
+        .reduce((a, b) => a + b, 0)
+    }
+    return n
+  };
